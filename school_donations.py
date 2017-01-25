@@ -10,15 +10,17 @@ MONGODB_PORT = 27017
 DBS_NAME = 'donorsUSA'
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
-          'date_posted': True, 'total_donations': True, '_id': False}
+          'date_posted': True, 'total_donations': True, '_id': False, 'school_city': True,
+          'school_metro': True, 'school_district': True, 'school_county': True, 'primary_focus_area': True,
+          'primary_focus_subject': True, 'grade_level': True}
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("layout_final.html")
 
 
-@app.route('/donorsUS/projects')
+@app.route("/donorsUS/projects")
 def donor_projects():
     connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
     collection = connection[DBS_NAME][COLLECTION_NAME]
@@ -31,5 +33,5 @@ def donor_projects():
     return json_projects
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

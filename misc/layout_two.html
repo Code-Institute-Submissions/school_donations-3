@@ -90,19 +90,6 @@
 
     <div class="row">
 
-        <!-- Time Chart -->
-        <div class="col-sm-8">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                    Number of Donations
-                </div>
-                <div class="chart-stage">
-                    <div id="time-chart"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Time Chart -->
-
         <!-- funding Pie -->
         <div class="col-sm-4">
             <div class="chart-wrapper">
@@ -116,107 +103,111 @@
         </div>
         <!-- funding Pie -->
 
+        <!-- Time Chart -->
+        <div class="col-sm-8">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Number of Donations
+                </div>
+                <div class="chart-stage">
+                    <div id="time-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Time Chart -->
+
+
+
     </div>
 
-    <div class="flex-outer row">
 
-        <!-- Flexbox Container for Vertical Display -->
-        <div class="flex-vertical col-sm-5">
 
-            <!-- Grade Level -->
-            <div class="col-sm-12">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        Grade Level
-                    </div>
-                    <div class="chart-stage">
-                        <div id="grade-level-pie-chart"></div>
-                    </div>
+
+    <div class="row">
+
+        <!-- Primary Focus Subject -->
+        <div class="col-sm-7">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Primary Focus Subject
+                </div>
+                <div class="chart-stage">
+                    <div id="primary-focus-subject-row-chart"></div>
                 </div>
             </div>
-            <!-- Grade Level -->
+        </div>
+        <!-- Primary Focus Subject -->
 
-            <!-- Poverty -->
-		    <div class="col-sm-12">
-			    <div class="chart-wrapper">
-				    <div class="chart-title">
-					    Poverty Level
-				    </div>
-				    <div class="chart-stage">
-					    <div id="poverty-level-pie-chart"></div>
-				    </div>
-			    </div>
-		    </div>
-		    <!-- Poverty -->
+        <!-- Primary Focus Area -->
+		<div class="col-sm-4">
+			<div class="chart-wrapper">
+				<div class="chart-title">
+					Primary Focus Area
+				</div>
+				<div class="chart-stage">
+					<div id="primary-focus-area-row-chart"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Primary Focus Area -->
 
-            <!-- School Metro -->
-            <div class="col-sm-12">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        School Metro
-                    </div>
-                    <div class="chart-stage">
-                        <div id="school-metro-pie-chart"></div>
-                    </div>
+        <!-- Resources -->
+		<div class="col-sm-4">
+			<div class="chart-wrapper">
+				<div class="chart-title">
+					Resource Type
+				</div>
+				<div class="chart-stage">
+					<div id="resource-type-row-chart"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Resources -->
+
+    </div>
+
+    <div class="row">
+
+        <!-- Poverty -->
+		<div class="col-sm-3">
+			<div class="chart-wrapper">
+				<div class="chart-title">
+					Poverty Level
+				</div>
+				<div class="chart-stage">
+					<div id="poverty-level-pie-chart"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Poverty -->
+
+        <!-- Grade Level -->
+        <div class="col-sm-3">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Grade Level
+                </div>
+                <div class="chart-stage">
+                    <div id="grade-level-pie-chart"></div>
                 </div>
             </div>
-            <!-- School Metro -->
-
-
-
         </div>
-        <!-- Flexbox Container for Vertical Display -->
+        <!-- Grade Level -->
 
-        <div class="flex-vertical col-sm-7">
-
-            <!-- Primary Focus Subject -->
-            <div class="col-sm-12">
-                <div class="chart-wrapper">
-                    <div class="chart-title">
-                        Primary Focus Subject
-                    </div>
-                    <div class="chart-stage">
-                        <div id="primary-focus-subject-row-chart"></div>
-                    </div>
+        <!-- School Metro -->
+        <div class="col-sm-3">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    School Metro
+                </div>
+                <div class="chart-stage">
+                    <div id="school-metro-pie-chart"></div>
                 </div>
             </div>
-            <!-- Primary Focus Subject -->
-
-            <div class="row">
-
-                <!-- Resources -->
-		        <div class="col-sm-6">
-			        <div class="chart-wrapper">
-				        <div class="chart-title">
-					        Resource Type
-				        </div>
-				        <div class="chart-stage">
-					        <div id="resource-type-row-chart"></div>
-				        </div>
-			        </div>
-		        </div>
-		        <!-- Resources -->
-
-                <!-- Primary Focus Area -->
-		        <div class="col-sm-6">
-			        <div class="chart-wrapper">
-				        <div class="chart-title">
-					        Primary Focus Area
-				        </div>
-				        <div class="chart-stage">
-					        <div id="primary-focus-area-row-chart"></div>
-				        </div>
-			        </div>
-		        </div>
-		        <!-- Primary Focus Area -->
-
-            </div>
-
         </div>
+        <!-- School Metro -->
 
 
-
-        </div>
 
     </div>
 
@@ -237,4 +228,3 @@
 <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
 </body>
 </html>
-

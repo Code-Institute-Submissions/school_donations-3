@@ -6,6 +6,10 @@
    font-size: 60px;
 }
 
+#total-school-district-nd {
+    font-size:60px;
+}
+
 
 
 
@@ -43,15 +47,48 @@
 
 .dc-select-menu {
    background: #33CC99;
-   width: 80%;
+   /*width: 80%;*/
+   width: 20vw;
    border: none;
    position: relative;
-   height: 31px;
-   font-size: 15px;
+   height: 12vh;
+   font-size: 25px;
    color: white;
    vertical-align: middle;
    text-align: center;
    padding-top: 4px;
    padding-bottom: 0px;
 
+}
+
+/* MEGAN'S CODE */
+
+.flex-outer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+/*.flex-row {*/
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+/*}*/
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+.chart-stage {
+    vertical-align: middle;
 }
