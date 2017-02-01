@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Oswald|Roboto|Slabo+27px" rel="stylesheet">
 
  </head>
 
@@ -16,24 +17,37 @@
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="./">School Donations Dashboard</a>
-			<button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
-		</div>
+
+		<div class="navbar-header col-sm-10">
+            <a class="navbar-brand" href="./">
+                <img src={{ url_for('static', filename='css/media/icons/mortarboard.png') }} title="MortarBoard" border="0">
+                School Donations Dashboard
+            </a>
+        </div>
+
+        <div class="start-button col-sm-2">
+            <ul class="nav navbar-nav">
+                <li><button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour</button></li>
+            </ul>
+        </div>
+
 	</div>
 </div>
+
+
 
 <div id="outer" class="container-fluid">
 
     <div class="row">
 
         <!-- Menu Select -->
-        <div class="col-sm-3">
-            <div class="chart-wrapper">
+        <div class="col-sm-3" >
+            <div class="chart-wrapper" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     Donation State
                 </div>
                 <div class="chart-stage">
+                    <img id="usa-img" src={{ url_for('static', filename='css/media/icons/united-states-of-america.png') }} title="USA" border="0">
                     <div id="menu-select"></div>
                 </div>
             </div>
@@ -43,10 +57,10 @@
         <!-- Metric 3 -->
         <div class="col-sm-3">
             <div class="chart-wrapper">
-                <div class="chart-title">
+                <div class="chart-title" id="no-border">
                     Total Number of School Districts
                 </div>
-                <div class="chart-stage">
+                <div class="chart-stage num-display">
                     <div id="total-school-district-nd"></div>
                 </div>
             </div>
@@ -56,18 +70,11 @@
         <!-- Metric 1 -->
 		<div class="col-sm-3">
 			<div class="chart-wrapper">
-				<div class="chart-title">
+				<div class="chart-title" id="no-border">
 					Total Number of Donations
 				</div>
-				<div class="chart-stage" style=" background: #33CC99;
-                   position: relative;
-                   font-size: 29px;
-                   color: white;
-                   vertical-align: middle;
-                   text-align: center;
-                   padding-top: 12px;
-                   padding-bottom: 0;">
-                   	<div id="number-projects-nd"></div>
+				<div class="chart-stage num-display">
+                    <div id="number-projects-nd"></div>
                    </div>
 			</div>
 		</div>
@@ -76,11 +83,11 @@
         <!-- Metric 2 -->
 		<div class="col-sm-3">
 			<div class="chart-wrapper">
-				<div class="chart-title">
+				<div class="chart-title" id="no-border">
 					Total Donations in USD
 				</div>
-				<div class="chart-stage">
-					<div id="total-donations-nd"></div>
+				<div class="chart-stage num-display">
+                    <div id="total-donations-nd"></div>
 				</div>
 			</div>
 		</div>
@@ -110,7 +117,8 @@
                     Funding Status
                 </div>
                 <div class="chart-stage">
-                    <div id="funding-pie-chart"></div>
+                    <img id="fund-img" src={{ url_for('static', filename='css/media/icons/diploma.png') }} title="Diploma" border="0">
+                    <div id="funding-pie-chart" class="pie-style"></div>
                 </div>
             </div>
         </div>
@@ -130,7 +138,8 @@
                         Grade Level
                     </div>
                     <div class="chart-stage">
-                        <div id="grade-level-pie-chart"></div>
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/books.png') }} title="Books" border="0">
+                        <div id="grade-level-pie-chart" class="pie-style"></div>
                     </div>
                 </div>
             </div>
@@ -143,7 +152,8 @@
 					    Poverty Level
 				    </div>
 				    <div class="chart-stage">
-					    <div id="poverty-level-pie-chart"></div>
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/apple.png') }} title="Apple" border="0">
+					    <div id="poverty-level-pie-chart" class="pie-style"></div>
 				    </div>
 			    </div>
 		    </div>
@@ -153,10 +163,11 @@
             <div class="col-sm-12">
                 <div class="chart-wrapper">
                     <div class="chart-title">
-                        School Metro
+                        School Area
                     </div>
                     <div class="chart-stage">
-                        <div id="school-metro-pie-chart"></div>
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/book.png') }} title="Book" border="0">
+                        <div id="school-metro-pie-chart" class="pie-style"></div>
                     </div>
                 </div>
             </div>
@@ -185,8 +196,8 @@
             <div class="row">
 
                 <!-- Resources -->
-		        <div class="col-sm-6">
-			        <div class="chart-wrapper">
+		        <div class="col-sm-6 resource-type">
+			        <div class="chart-wrapper slim">
 				        <div class="chart-title">
 					        Resource Type
 				        </div>
@@ -199,7 +210,7 @@
 
                 <!-- Primary Focus Area -->
 		        <div class="col-sm-6">
-			        <div class="chart-wrapper">
+			        <div class="chart-wrapper slim">
 				        <div class="chart-title">
 					        Primary Focus Area
 				        </div>

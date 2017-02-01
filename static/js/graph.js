@@ -30,18 +30,12 @@ function makeGraphs(error, projectsJson) {
    var stateDim = ndx.dimension(function (d) {
        return d["school_state"];
    });
-   var totalDonationsDim = ndx.dimension(function (d) {
-       return d["total_donations"];
-   });
 
    var fundingStatus = ndx.dimension(function (d) {
        return d["funding_status"];
    });
 
     // MEGAN'S CODE
-    var schoolDistrictDim = ndx.dimension(function (d) {
-        return d["school_district"];
-    });
 
     var primaryFocusSubjectDim = ndx.dimension(function (d) {
         return d["primary_focus_subject"];
@@ -71,19 +65,12 @@ function makeGraphs(error, projectsJson) {
    var stateGroup = stateDim.group();
 
     // MEGAN'S CODE
-    var totalSchoolDistrictByState = stateDim.group().reduceSum(function (d) {  // do I need this?
-        return d["school_district"];
-    });
 
     var totalSchoolDistrict = ndx.groupAll().reduceSum(function (d) {  // returns length of school_district array
         return d["school_district"].length;
     });
 
     var numProjectsByPrimaryFocusSubject = primaryFocusSubjectDim.group();
-
-    var totalPrimaryFocusSubjectsByDate = stateDim.group().reduceSum(function (d) {  // do I need this?
-        return d["primary_focus_subject"];
-    });
 
     var numProjectsByGradeLevel = gradeLevelDim.group();
 
@@ -106,7 +93,6 @@ function makeGraphs(error, projectsJson) {
    //Charts
    var timeChart = dc.barChart("#time-chart");
    var resourceTypeRowChart = dc.rowChart("#resource-type-row-chart");
-   var povertyLevelRowChart = dc.rowChart("#poverty-level-row-chart");
    var numberProjectsND = dc.numberDisplay("#number-projects-nd");
    var totalDonationsND = dc.numberDisplay("#total-donations-nd");
    var fundingStatusPieChart = dc.pieChart("#funding-pie-chart");
@@ -114,28 +100,33 @@ function makeGraphs(error, projectsJson) {
     // MEGAN'S CODE
     var totalSchoolDistrictND = dc.numberDisplay("#total-school-district-nd");
     var primaryFocusSubjectRowChart = dc.rowChart("#primary-focus-subject-row-chart");
-    var fundingStatusRowChart = dc.rowChart("#funding-row-chart");
     var povertyLevelPieChart = dc.pieChart("#poverty-level-pie-chart");
-    var gradeLevelRowChart = dc.rowChart("#grade-level-row-chart");
     var gradeLevelPieChart = dc.pieChart("#grade-level-pie-chart");
-    var schoolMetroRowChart = dc.rowChart("#school-metro-row-chart");
     var schoolMetroPieChart = dc.pieChart("#school-metro-pie-chart");
-    var resourceTypePieChart = dc.pieChart("#resource-type-pie-chart");
     var primaryFocusAreaRowChart = dc.rowChart("#primary-focus-area-row-chart");
-    var primaryFocusAreaPieChart = dc.pieChart("#primary-focus-area-pie-chart");
 
 
-   selectField = dc.selectMenu('#menu-select')
+    //IN USE AND ORDER
+
+
+    selectField = dc.selectMenu('#menu-select')
        .dimension(stateDim)
        .group(stateGroup);
 
+    totalSchoolDistrictND
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function (d) {
+            return d;
+        })
+        .group(totalSchoolDistrict)
+        .formatNumber(d3.format(".3s"));
 
-   numberProjectsND
-       .formatNumber(d3.format("d"))
-       .valueAccessor(function (d) {
-           return d;
-       })
-       .group(all);
+    numberProjectsND
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function (d) {
+            return d;
+        })
+        .group(all);
 
    totalDonationsND
        .formatNumber(d3.format("d"))
@@ -145,8 +136,8 @@ function makeGraphs(error, projectsJson) {
        .group(totalDonations)
        .formatNumber(d3.format(".3s"));
 
- timeChart
-       .width(800)
+    timeChart
+       .width(860)
        .height(200)
        .margins({top: 10, right: 50, bottom: 30, left: 50})
        .dimension(dateDim)
@@ -157,69 +148,56 @@ function makeGraphs(error, projectsJson) {
        .xAxisLabel("Year")
        .yAxis().ticks(4);
 
-   resourceTypeRowChart
+    fundingStatusPieChart
+       .height(200)
+       .radius(90)
+       .innerRadius(0)
+       .renderTitle(false)
+       .transitionDuration(1500)
+       .dimension(fundingStatus)
+       .group(numProjectsByFundingStatus)
+       .ordinalColors(['#e63032', '#ec5e60', '#f18c8d']);
+
+    gradeLevelPieChart
+        .height(230)
+        .radius(100)
+        .transitionDuration(1800)
+        .dimension(gradeLevelDim)
+        .group(numProjectsByGradeLevel)
+        .externalLabels(20)
+        .ordinalColors(['#f3cc28', '#f4d240', '#f5d758', '#f7dd70']);
+
+    povertyLevelPieChart
+        .height(230)
+        .radius(100)
+        .transitionDuration(2000)
+        .dimension(povertyLevelDim)
+        .group(numProjectsByPovertyLevel)
+        .externalLabels(10);
+
+    schoolMetroPieChart
+        .height(230)
+        .radius(100)
+        .transitionDuration(2500)
+        .dimension(schoolMetroDim)
+        .group(numProjectsBySchoolMetro)
+        .externalLabels(20)
+        .ordinalColors(['#76b32f', '#85bb46', '#94c45d', '#a3cc74']);
+
+    primaryFocusSubjectRowChart
+        .width(720)
+        .height(550)
+        .renderTitle(false)
+        .dimension(primaryFocusSubjectDim)
+        .group(numProjectsByPrimaryFocusSubject)
+        .xAxis().ticks(8);
+
+    resourceTypeRowChart
        .width(300)
        .height(200)
        .dimension(resourceTypeDim)
        .group(numProjectsByResourceType)
        .xAxis().ticks(4);
-
-   povertyLevelRowChart
-       .width(300)
-       .height(300)
-       .dimension(povertyLevelDim)
-       .group(numProjectsByPovertyLevel)
-       .xAxis().ticks(4);
-
-   fundingStatusPieChart
-       .height(200)
-       .radius(90)
-       .innerRadius(0)
-       .transitionDuration(1500)
-       .dimension(fundingStatus)
-       .group(numProjectsByFundingStatus);
-
-    // MEGAN'S CODE
-
-    // Number Display
-
-    totalSchoolDistrictND
-        .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
-            return d;
-        })
-        .group(totalSchoolDistrict)
-        .formatNumber(d3.format(".3s"));
-
-    // Row Charts
-
-    primaryFocusSubjectRowChart
-        .width(700)
-        .height(550)
-        .dimension(primaryFocusSubjectDim)
-        .group(numProjectsByPrimaryFocusSubject)
-        .xAxis().ticks(8);
-
-    fundingStatusRowChart
-        .width(300)
-        .height(200)
-        .dimension(fundingStatus)
-        .group(numProjectsByFundingStatus)
-        .xAxis().ticks(4);
-
-    gradeLevelRowChart
-        .width(300)
-        .height(200)
-        .dimension(gradeLevelDim)
-        .group(numProjectsByGradeLevel)
-        .xAxis().ticks(4);
-
-    schoolMetroRowChart
-        .width(300)
-        .height(200)
-        .dimension(schoolMetroDim)
-        .group(numProjectsBySchoolMetro)
-        .xAxis().ticks(4);
 
     primaryFocusAreaRowChart
         .width(300)
@@ -227,53 +205,6 @@ function makeGraphs(error, projectsJson) {
         .dimension(primaryFocusAreaDim)
         .group(numProjectsByPrimaryFocusArea)
         .xAxis().ticks(4);
-
-    // Pie Charts
-
-    povertyLevelPieChart
-        .height(230)
-        .radius(110)
-        .innerRadius(30)
-        .transitionDuration(1500)
-        .dimension(povertyLevelDim)
-        .group(numProjectsByPovertyLevel);
-
-    gradeLevelPieChart
-        .height(230)
-        .radius(110)
-        .innerRadius(30)
-        .transitionDuration(1500)
-        .dimension(gradeLevelDim)
-        .group(numProjectsByGradeLevel);
-
-    schoolMetroPieChart
-        .height(230)
-        .radius(110)
-        .innerRadius(30)
-        .transitionDuration(1500)
-        .dimension(schoolMetroDim)
-        .group(numProjectsBySchoolMetro);
-
-    resourceTypePieChart
-        .height(200)
-        .radius(90)
-        .innerRadius(40)
-        .transitionDuration(1500)
-        .dimension(resourceTypeDim)
-        .group(numProjectsByResourceType);
-
-    primaryFocusAreaPieChart
-        .height(200)
-        .radius(90)
-        .innerRadius(40)
-        .transitionDuration(1500)
-        .dimension(primaryFocusAreaDim)
-        .group(numProjectsByPrimaryFocusArea);
-
-
-
-
-
 
    dc.renderAll();
 }

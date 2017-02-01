@@ -1,23 +1,3 @@
-#number-projects-nd {
-   font-size: 60px;
-}
-
-#total-donations-nd {
-   font-size: 60px;
-}
-
-#total-school-district-nd {
-    font-size:60px;
-}
-
-
-
-
-.dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
-}
-
 #total-projects {
    background: #33CC99;
    width: 200px;
@@ -45,23 +25,18 @@
 }
 
 
-.dc-select-menu {
-   background: #33CC99;
-   /*width: 80%;*/
-   width: 20vw;
-   border: none;
-   position: relative;
-   height: 12vh;
-   font-size: 25px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
 
-}
 
 /* MEGAN'S CODE */
+
+/* Index */
+/*  1. Display Layout */
+/*  2. Navigation Bar */
+/*      2.1 Navigation Bar Media Queries */
+/*  3. Body */
+/*      3.1 Chart Wrappers */
+
+/* DISPLAY LAYOUT */
 
 .flex-outer {
     display: flex;
@@ -77,18 +52,180 @@
     align-items: stretch;
 }
 
-/*.flex-row {*/
-    /*display: flex;*/
-    /*flex-flow: row wrap;*/
-    /*justify-content: space-around;*/
-    /*align-items: center;*/
-/*}*/
+/* NAVIGATION BAR */
 
-svg {
-    display: block;
-    margin: auto;
+.navbar-inverse {
+    background-color: #62B2B5;
+    border-color: #62B2B5;
 }
 
-.chart-stage {
+.navbar-inverse .navbar-brand {
+    font-family: "Oswald", Helvetica, Arial, SansSerif;
+    font-size: 35px;
+}
+
+.navbar .navbar-header .navbar-brand {
+    padding-top: 5px;
+}
+
+.navbar .start-button {
+    text-align: center;
+}
+
+.navbar .start-button button {
+    margin-top: 6px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    color: #62B2B5;
+    text-align:center;
+    text-decoration: none;
+    font-size:15px;
+    font-family: "Oswald", Helvetica, Arial, SansSerif;
+}
+
+.navbar:hover .start-button button {
+    background-color: #62B2B5;
+    color: #ffffff;
+}
+
+.navbar-header img {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+/* NAVIGATION BAR MEDIA QUERIES */
+
+@media (max-width: 330px) {
+    .navbar-inverse .navbar-brand {
+        font-size: 4vw;
+    }
+
+    #outer {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 331px) and (max-width: 550px) {
+    .navbar-inverse .navbar-brand {
+        font-size:5vw;
+    }
+
+    #outer {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width:551px) and (max-width:770px) {
+    #outer {
+        margin-top: 100px;
+    }
+}
+
+/* BODY */
+
+/* CHART WRAPPERS */
+
+#outer .chart-wrapper {
+    border-radius: 30px;
+}
+
+svg {
+    background-color:#eff7f3;
+    border-radius:20px;
+}
+
+#outer .chart-title {
+    background-color: #62b58f;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* DONATION STATE SELECT */
+
+div#menu-select.dc-chart {
+    width:200px;
+    display: inline-block;
+}
+
+#usa-img {
+    opacity:.9;
+    margin-right:10px;
+    margin-bottom: 3px;
+}
+
+.dc-select-menu {
+   background: #62b58f;
+   width: 200px;
+   border: none;
+   height: 60px;
+   font-size: 20px;
+   color: white;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+    border-radius: 15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+/* NUMBER DISPLAYS */
+
+div.dc-chart {
+    float: none;
+}
+
+.chart-title#no-border {
+    border: none;
+}
+
+.num-display {
+    background: #33CC99;
+    color: white;
     vertical-align: middle;
+    text-align: center;
+    font-size:60px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/*PIE CHARTS */
+.dc-chart .pie-slice {
+    fill: black;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    text-transform: capitalize;
+}
+
+img#pie-img {
+    position: absolute;
+    top: 85px;
+    right:420px;
+}
+
+img#fund-img {
+    position: absolute;
+    top:70px;
+    right:340px;
+}
+
+/* ROW CHARTS */
+.dc-chart g.row text {
+    fill: black;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    text-transform: capitalize;
+}
+
+.slim {
+    float:left;
+}
+
+.resource-type {
+    position:relative;
+    left:20px;
 }
