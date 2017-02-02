@@ -38,11 +38,16 @@
 
 <div id="outer" class="container-fluid">
 
+    <div data-step="2" data-intro="Explore the statistics of DonorsChoose.org,
+    a US based nonprofit organisation that allows individuals to donate money directly to public school
+    classroom projects." style="font-weight: normal" data-position="">
     <div class="row">
 
+        <div class="data-step-3" data-step="3" data-intro="Select a State to get specific information on how DonorsChoose is
+        benefiting your local classrooms." style="font-weight:normal" data-position="right">
         <!-- Menu Select -->
         <div class="col-sm-3" >
-            <div class="chart-wrapper" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+            <div class="chart-wrapper">
                 <div class="chart-title">
                     Donation State
                 </div>
@@ -66,10 +71,11 @@
             </div>
         </div>
         <!-- Metric 3 -->
+        </div>
 
         <!-- Metric 1 -->
 		<div class="col-sm-3">
-			<div class="chart-wrapper">
+			<div class="chart-wrapper" data-step="1" data-intro="Welcome to the School Donations Dashboard!" style="font-weight: bold" data-position="bottom">
 				<div class="chart-title" id="no-border">
 					Total Number of Donations
 				</div>
@@ -117,7 +123,7 @@
                     Funding Status
                 </div>
                 <div class="chart-stage">
-                    <img id="fund-img" src={{ url_for('static', filename='css/media/icons/diploma.png') }} title="Diploma" border="0">
+                    <img id="fund-img" src={{ url_for('static', filename='css/media/icons/apple.png') }} title="Apple" border="0">
                     <div id="funding-pie-chart" class="pie-style"></div>
                 </div>
             </div>
@@ -125,20 +131,21 @@
         <!-- funding Pie -->
 
     </div>
+    </div>
 
-    <div class="flex-outer row">
+    <div class="flex-outer row" >
 
         <!-- Flexbox Container for Vertical Display -->
         <div class="flex-vertical col-sm-5">
 
             <!-- Grade Level -->
             <div class="col-sm-12">
-                <div class="chart-wrapper">
+                <div class="chart-wrapper" data-step="5" data-intro="And see exactly who they are going towards." style="font-weight:normal" data-position="right">
                     <div class="chart-title">
                         Grade Level
                     </div>
                     <div class="chart-stage">
-                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/books.png') }} title="Books" border="0">
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/light-bulb.png') }} title="Light-bulb" border="0">
                         <div id="grade-level-pie-chart" class="pie-style"></div>
                     </div>
                 </div>
@@ -152,7 +159,7 @@
 					    Poverty Level
 				    </div>
 				    <div class="chart-stage">
-                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/apple.png') }} title="Apple" border="0">
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/notebook.png') }} title="Notebook" border="0">
 					    <div id="poverty-level-pie-chart" class="pie-style"></div>
 				    </div>
 			    </div>
@@ -166,7 +173,7 @@
                         School Area
                     </div>
                     <div class="chart-stage">
-                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/book.png') }} title="Book" border="0">
+                        <img id="pie-img" src={{ url_for('static', filename='css/media/icons/college.png') }} title="College" border="0">
                         <div id="school-metro-pie-chart" class="pie-style"></div>
                     </div>
                 </div>
@@ -182,7 +189,7 @@
 
             <!-- Primary Focus Subject -->
             <div class="col-sm-12">
-                <div class="chart-wrapper">
+                <div class="chart-wrapper" data-step="4" data-intro="See exactly what these donation projects are helping out with." style="font-weight:normal" data-position="left">
                     <div class="chart-title">
                         Primary Focus Subject
                     </div>
@@ -225,17 +232,44 @@
 
         </div>
 
-
-
         </div>
 
     </div>
 
 </div>
 
-
-
 <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="footer">
+       <div class="container narrow row-fluid">
+           <div class="col-sm-4">
+           </div>
+          <div class="col-sm-4" data-step="6" data-intro="Visit DonorsChoose.org to check out projects running right now!" style="font-weight:normal" data-position="top">
+              <h2>Visit DonorsChoose.org</h2>
+              <div class="logos">
+                <h6><a id="donorschoose-btn" href="https://www.donorschoose.org/donors/search.html">Donate Now</a></h6>
+              </div>
+          </div>
+           <div class="col-sm-2"></div>
+          <div id="megan" class="col-sm-2">
+              <h5>Created by Megan Emily Duffy</h5>
+              <div class="logos">
+                <a href="https://github.com/meganduffy">
+                    <img src={{ url_for('static', filename='css/media/icons/github-logo.png') }} title="Github" border="0">
+                </a>
+                <a href="https://www.linkedin.com/in/meganemilyduffy/">
+                    <img src={{ url_for('static', filename='css/media/icons/linkedin-sign.png') }} title="LinkedIn" border="0">
+                </a>
+              </div>
+          </div>
+       </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+
 <script src="{{ url_for ('static', filename='lib/js/intro.js')}}"></script>
 <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
 <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>

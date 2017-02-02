@@ -1,32 +1,3 @@
-#total-projects {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-
-
-
-
 /* MEGAN'S CODE */
 
 /* Index */
@@ -83,11 +54,14 @@
     text-decoration: none;
     font-size:15px;
     font-family: "Oswald", Helvetica, Arial, SansSerif;
+    -webkit-transition: 0.5s 0.5s;
 }
 
 .navbar:hover .start-button button {
-    background-color: #62B2B5;
-    color: #ffffff;
+    animation: expand 1s linear 2s;
+    padding:8px 12px;
+    font-size:18px;
+    margin-bottom:3px;
 }
 
 .navbar-header img {
@@ -191,6 +165,7 @@ div.dc-chart {
     vertical-align: middle;
     text-align: center;
     font-size:60px;
+    font-weight:normal;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -204,13 +179,13 @@ div.dc-chart {
 
 img#pie-img {
     position: absolute;
-    top: 85px;
+    top: 160px;
     right:420px;
 }
 
 img#fund-img {
     position: absolute;
-    top:70px;
+    top:130px;
     right:340px;
 }
 
@@ -228,4 +203,53 @@ img#fund-img {
 .resource-type {
     position:relative;
     left:20px;
+}
+
+/* TOOLTIPS */
+
+div.introjs-helperLayer {
+    background-color: rgba(255,255,255,.4) !important;
+}
+
+.data-step-3 {
+    height:150px;
+    display: inline;
+    overflow:hidden;
+}
+
+/* FOOTER */
+
+.footer {
+    height:120px;
+    background-color:#62B2B5;
+    margin-left: -20px;
+    margin-right:-20px;
+    text-align:center;
+    font-family: "Oswald", Helvetica, Arial, SansSerif;
+    color:#ffffff;
+}
+
+.footer #megan {
+    margin-top: 40px;
+    text-align: right;
+    font-size:16px;
+    color: #4e8e90;
+}
+
+.footer .logos {
+    margin-left: auto;
+    margin-right:auto;
+    width:80px;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-around;
+    align-items:flex-end;
+}
+
+.footer #donorschoose-btn {
+    padding:5px 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-decoration: none;
+    color:#62B2B5;
 }
