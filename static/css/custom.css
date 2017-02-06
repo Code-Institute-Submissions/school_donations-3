@@ -50,18 +50,18 @@
     border: 3px solid #ffffff;
     border-radius: 12px;
     color: #62B2B5;
-    text-align:center;
+    text-align: center;
     text-decoration: none;
-    font-size:15px;
+    font-size: 15px;
     font-family: "Oswald", Helvetica, Arial, SansSerif;
     -webkit-transition: 0.5s 0.5s;
 }
 
 .navbar:hover .start-button button {
     animation: expand 1s linear 2s;
-    padding:8px 12px;
-    font-size:18px;
-    margin-bottom:3px;
+    padding: 8px 12px;
+    font-size: 18px;
+    margin-bottom: 3px;
 }
 
 .navbar-header img {
@@ -85,7 +85,7 @@
 
 @media (min-width: 331px) and (max-width: 550px) {
     .navbar-inverse .navbar-brand {
-        font-size:5vw;
+        font-size: 5vw;
     }
 
     #outer {
@@ -93,7 +93,7 @@
     }
 }
 
-@media (min-width:551px) and (max-width:770px) {
+@media (min-width: 551px) and (max-width: 770px) {
     #outer {
         margin-top: 100px;
     }
@@ -108,15 +108,15 @@
 }
 
 svg {
-    background-color:#eff7f3;
-    border-radius:20px;
+    background-color: #eff7f3;
+    border-radius: 20px;
 }
 
 #outer .chart-title {
     background-color: #62b58f;
     font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
     border-top-left-radius: 20px;
-    border-top-right-radius:20px;
+    border-top-right-radius: 20px;
     color: #ffffff;
     font-size: 20px;
 }
@@ -124,28 +124,28 @@ svg {
 /* DONATION STATE SELECT */
 
 div#menu-select.dc-chart {
-    width:200px;
+    width: 200px;
     display: inline-block;
 }
 
 #usa-img {
-    opacity:.9;
-    margin-right:10px;
+    opacity: .9;
+    margin-right: 10px;
     margin-bottom: 3px;
 }
 
 .dc-select-menu {
-   background: #62b58f;
-   width: 200px;
-   border: none;
-   height: 60px;
-   font-size: 20px;
-   color: white;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
+    background: #62b58f;
+    width: 200px;
+    border: none;
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 0px;
     border-radius: 15px;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -164,8 +164,8 @@ div.dc-chart {
     color: white;
     vertical-align: middle;
     text-align: center;
-    font-size:60px;
-    font-weight:normal;
+    font-size: 60px;
+    font-weight: normal;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -180,13 +180,13 @@ div.dc-chart {
 img#pie-img {
     position: absolute;
     top: 160px;
-    right:420px;
+    right: 420px;
 }
 
 img#fund-img {
     position: absolute;
-    top:130px;
-    right:340px;
+    top: 130px;
+    right: 340px;
 }
 
 /* ROW CHARTS */
@@ -197,59 +197,59 @@ img#fund-img {
 }
 
 .slim {
-    float:left;
+    float: left;
 }
 
 .resource-type {
-    position:relative;
-    left:20px;
+    position: relative;
+    left: 20px;
 }
 
 /* TOOLTIPS */
 
 div.introjs-helperLayer {
-    background-color: rgba(255,255,255,.4) !important;
+    background-color: rgba(255, 255, 255, .4) !important;
 }
 
 .data-step-3 {
-    height:150px;
+    height: 150px;
     display: inline;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 /* FOOTER */
 
 .footer {
-    height:120px;
-    background-color:#62B2B5;
+    height: 120px;
+    background-color: #62B2B5;
     margin-left: -20px;
-    margin-right:-20px;
-    text-align:center;
+    margin-right: -20px;
+    text-align: center;
     font-family: "Oswald", Helvetica, Arial, SansSerif;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 .footer #megan {
     margin-top: 40px;
     text-align: right;
-    font-size:16px;
+    font-size: 16px;
     color: #4e8e90;
 }
 
 .footer .logos {
     margin-left: auto;
-    margin-right:auto;
-    width:80px;
-    display:flex;
-    flex-flow:row nowrap;
+    margin-right: auto;
+    width: 80px;
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-around;
-    align-items:flex-end;
+    align-items: flex-end;
 }
 
 .footer #donorschoose-btn {
-    padding:5px 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     background-color: #ffffff;
     text-decoration: none;
-    color:#62B2B5;
+    color: #62B2B5;
 }
