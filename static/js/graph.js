@@ -79,7 +79,7 @@ function makeGraphs(error, projectsJson) {
     var numProjectsByPrimaryFocusArea = primaryFocusAreaDim.group();
 
 
-    var all = ndx.groupAll();
+    var totalProjects = ndx.groupAll();
     var totalDonations = ndx.groupAll().reduceSum(function (d) {
         return d["total_donations"];
     });
@@ -126,7 +126,8 @@ function makeGraphs(error, projectsJson) {
         .valueAccessor(function (d) {
             return d;
         })
-        .group(all);
+        .group(totalProjects)
+        .formatNumber(d3.format(".3s"));
 
     totalDonationsND
         .formatNumber(d3.format("d"))

@@ -155,9 +155,10 @@ div.dc-chart {
     float: none;
 }
 
-.chart-title#no-border {
-    border: none;
-}
+/* previous id="no-border", when converted into class failed to work. Temporary fix with inline styling */
+/*#outer.chart-wrapper.chart-title.no-border {*/
+    /*border: none !important;*/
+/*}*/
 
 .num-display {
     background: #33CC99;
