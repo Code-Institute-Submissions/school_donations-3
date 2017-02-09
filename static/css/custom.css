@@ -1,13 +1,18 @@
-/* MEGAN'S CODE */
-
 /* Index */
 /*  1. Display Layout */
 /*  2. Navigation Bar */
 /*      2.1 Navigation Bar Media Queries */
 /*  3. Body */
 /*      3.1 Chart Wrappers */
+/*      3.2 Donation State Select Menu */
+/*      3.3 Number Displays */
+/*      3.4 Pie Charts */
+/*      3.5 Row Charts */
+/*      3.5 Tooltips */
+/*  4. Footer */
 
-/* DISPLAY LAYOUT */
+
+/* 1. DISPLAY LAYOUT */
 
 .flex-outer {
     display: flex;
@@ -23,7 +28,7 @@
     align-items: stretch;
 }
 
-/* NAVIGATION BAR */
+/* 2. NAVIGATION BAR */
 
 .navbar-inverse {
     background-color: #62B2B5;
@@ -70,8 +75,9 @@
     margin-left: 10px;
     margin-right: 20px;
 }
+/* DISPLAY LAYOUT */
 
-/* NAVIGATION BAR MEDIA QUERIES */
+/* 2.1 NAVIGATION BAR MEDIA QUERIES */
 
 @media (max-width: 330px) {
     .navbar-inverse .navbar-brand {
@@ -98,10 +104,11 @@
         margin-top: 100px;
     }
 }
+/* NAVIGATION BAR MEDIA QUERIES */
 
-/* BODY */
+/* 3. BODY */
 
-/* CHART WRAPPERS */
+/* 3.1 CHART WRAPPERS */
 
 #outer .chart-wrapper {
     border-radius: 30px;
@@ -120,8 +127,9 @@ svg {
     color: #ffffff;
     font-size: 20px;
 }
+/* CHART WRAPPERS */
 
-/* DONATION STATE SELECT */
+/* 3.2 DONATION STATE SELECT MENU */
 
 div#menu-select.dc-chart {
     width: 200px;
@@ -148,8 +156,9 @@ div#menu-select.dc-chart {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/* DONATION STATE SELECT MENU */
 
-/* NUMBER DISPLAYS */
+/* 3.3 NUMBER DISPLAYS */
 
 div.dc-chart {
     float: none;
@@ -170,8 +179,9 @@ div.dc-chart {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+/* NUMBER DISPLAYS */
 
-/*PIE CHARTS */
+/* 3.4 PIE CHARTS */
 .dc-chart .pie-slice {
     fill: black;
     font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
@@ -189,8 +199,9 @@ img#fund-img {
     top: 130px;
     right: 340px;
 }
+/* PIE CHARTS */
 
-/* ROW CHARTS */
+/* 3.5 ROW CHARTS */
 .dc-chart g.row text {
     fill: black;
     font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
@@ -205,14 +216,16 @@ img#fund-img {
     position: relative;
     left: 20px;
 }
+/* PIE CHARTS */
 
-/* TOOLTIPS */
+/* 3.5 TOOLTIPS */
 
 div.introjs-helperLayer {
     background-color: rgba(255, 255, 255, .4) !important;
 }
+/* TOOLTIPS */
 
-/* FOOTER */
+/* 4. FOOTER */
 
 .footer {
     height: 120px;
@@ -248,3 +261,4 @@ div.introjs-helperLayer {
     text-decoration: none;
     color: #62B2B5;
 }
+/* FOOTER */

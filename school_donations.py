@@ -6,22 +6,27 @@ import json
 
 app = Flask(__name__)
 
+# Set up Mongo database connection and collection call
 MONGODB_HOST = 'ds145649.mlab.com'
 MONGODB_PORT = 45649
-DBS_NAME = os.getenv('MONGO_DB_NAME')
 MONGO_URI = os.getenv('MONGO_URI')
+DBS_NAME = os.getenv('MONGO_DB_NAME')
 COLLECTION_NAME = 'projects'
+
+# Select data fields
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, '_id': False, 'school_city': True,
           'school_metro': True, 'school_district': True, 'school_county': True, 'primary_focus_area': True,
           'primary_focus_subject': True, 'grade_level': True}
 
 
+# Set up routing and call base.html file
 @app.route("/")
 def index():
     return render_template("base.html")
 
 
+# Retrieve data from database
 @app.route("/donorsUS/projects")
 def donor_projects():
     connection = MongoClient(MONGO_URI)
