@@ -8,11 +8,8 @@ app = Flask(__name__)
 
 MONGODB_HOST = 'ds145649.mlab.com'
 MONGODB_PORT = 45649
-# DBS_NAME = os.getenv('MONGO_DB_NAME')
-DBS_NAME = 'heroku_2z1m9rfs'
-print("And the DBS_NAME is: %s" % DBS_NAME)
+DBS_NAME = os.getenv('MONGO_DB_NAME')
 MONGO_URI = os.getenv('MONGO_URI')
-print("MONGO_URI: %s" % MONGO_URI)
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, '_id': False, 'school_city': True,
