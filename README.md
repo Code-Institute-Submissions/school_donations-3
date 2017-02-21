@@ -32,6 +32,7 @@ Queue.js, in case I need to read from additional datasources/apis's at a later d
 ### Features Left to Implement
 
 1. Fully responsive layout with mobile design.
+2. Integration tests.
 
 ## Tech Used
 
