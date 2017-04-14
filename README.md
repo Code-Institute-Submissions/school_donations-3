@@ -75,7 +75,7 @@ DBS_NAME = 'donorsUSA'
 COLLECTION_NAME = 'projects'```
 Within the **donor_projects()** function enter the following values: ```connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
    collection = connection[DBS_NAME][COLLECTION_NAME]```
-8. Run **school_donations.py** in your IED and - __volia!__ - the app should appear in your browser.
-- Give the app a few minutes for the data to load.
-- Make sure you have **mongod** running; otherwise you'll get no data back.
-- Turn off caching in your chrome developer tools. This prevents confusion and frustration of seeing out of date cached versions of your dashboard when developing.
+8. Run **school_donations.py** in your IDE and - __volia!__ - the app should appear in your browser.
+    - Give the app a few minutes for the data to load.
+    - Make sure you have **mongod** running; otherwise you'll get no data back.
+    - Turn off caching in your chrome developer tools. This prevents confusion and frustration of seeing out of date cached versions of your dashboard when developing.

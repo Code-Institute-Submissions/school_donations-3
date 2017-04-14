@@ -1,7 +1,6 @@
 /* Index */
 /*  1. Display Layout */
 /*  2. Navigation Bar */
-/*      2.1 Navigation Bar Media Queries */
 /*  3. Body */
 /*      3.1 Chart Wrappers */
 /*      3.2 Donation State Select Menu */
@@ -36,7 +35,7 @@
 }
 
 .navbar-inverse .navbar-brand {
-    font-family: "Oswald", Helvetica, Arial, SansSerif;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
     font-size: 35px;
 }
 
@@ -58,7 +57,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 15px;
-    font-family: "Oswald", Helvetica, Arial, SansSerif;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
     -webkit-transition: 0.5s 0.5s;
 }
 
@@ -77,35 +76,6 @@
 }
 /* DISPLAY LAYOUT */
 
-/* 2.1 NAVIGATION BAR MEDIA QUERIES */
-
-@media (max-width: 330px) {
-    .navbar-inverse .navbar-brand {
-        font-size: 4vw;
-    }
-
-    #outer {
-        margin-top: 100px;
-    }
-}
-
-@media (min-width: 331px) and (max-width: 550px) {
-    .navbar-inverse .navbar-brand {
-        font-size: 5vw;
-    }
-
-    #outer {
-        margin-top: 100px;
-    }
-}
-
-@media (min-width: 551px) and (max-width: 770px) {
-    #outer {
-        margin-top: 100px;
-    }
-}
-/* NAVIGATION BAR MEDIA QUERIES */
-
 /* 3. BODY */
 
 /* 3.1 CHART WRAPPERS */
@@ -121,7 +91,7 @@ svg {
 
 #outer .chart-title {
     background-color: #62b58f;
-    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, sans-serif;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     color: #ffffff;
@@ -184,7 +154,7 @@ div.dc-chart {
 /* 3.4 PIE CHARTS */
 .dc-chart .pie-slice {
     fill: black;
-    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, sans-serif;
     text-transform: capitalize;
 }
 
@@ -204,7 +174,7 @@ img#fund-img {
 /* 3.5 ROW CHARTS */
 .dc-chart g.row text {
     fill: black;
-    font-family: "Fira Sans Condensed", Helvetica, Arial, SansSerif;
+    font-family: "Fira Sans Condensed", Helvetica, Arial, sans-serif;
     text-transform: capitalize;
 }
 
@@ -233,7 +203,7 @@ div.introjs-helperLayer {
     margin-left: -20px;
     margin-right: -20px;
     text-align: center;
-    font-family: "Oswald", Helvetica, Arial, SansSerif;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
     color: #ffffff;
 }
 
