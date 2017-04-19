@@ -1,3 +1,15 @@
+/* Index
+  1. Display Layout
+  2. Navigation Bar
+  3. Body
+      3.1 Chart Wrappers
+      3.2 Donation State Select Menu
+      3.3 Number Displays
+      3.4 Pie Charts
+      3.5 Row Charts
+      3.5 Tooltips
+  4. Footer */
+
 /* 1. NAVIGATION BAR MEDIA QUERIES */
 
 @media (max-width: 330px) {
@@ -36,3 +48,62 @@
 }
 
 /* TIME CHART MEDIA QUERIES */
+/* UP TO 673ppx */
+
+@media (max-width:690px) {
+    .chart-div {
+        display: block;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        float:right;
+    }
+    .slim {
+        float: none;
+    }
+}
+
+/* UP TO 765px */
+
+@media (max-width: 765px) {
+    #usa-img {
+        display:none;
+    }
+    .select-stage {
+        text-align:center;
+    }
+    .dc-select-menu {
+        width: 100%;
+    }
+    svg {
+        margin:auto;
+        width:100%;
+    }
+    .time-chart-div {
+        display: none;
+    }
+    .primary-focus-subject-div {
+        display: none;
+    }
+    .pie-div {
+        display: block;
+        width: 95vw;
+        margin: auto;
+    }
+    img#fund-img {
+        display:none;
+    }
+    img#pie-img {
+        display: none;
+    }
+    .chart-div {
+        display:block;
+        float: left;
+    }
+}
+
+@media (max-width:985px) {
+    .footer {
+        height: 200px;
+    }
+}

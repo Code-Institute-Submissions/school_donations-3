@@ -15,7 +15,7 @@
                         <div class="chart-title">
                             Donation State
                         </div>
-                        <div class="chart-stage">
+                        <div class="chart-stage select-stage">
                             <img id="usa-img"
                                  src={{ url_for('static', filename='css/media/icons/united-states-of-america.png') }} title="USA"
                                  border="0">
@@ -70,7 +70,7 @@
             <div class="row">
 
                 <!-- Time Chart -->
-                <div class="col-sm-8">
+                <div class="col-sm-8 time-chart-div">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Number of Donations
@@ -83,12 +83,12 @@
                 <!-- Time Chart -->
 
                 <!-- funding Pie -->
-                <div class="col-sm-4">
+                <div class="col-sm-4 pie-div">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Funding Status
                         </div>
-                        <div class="chart-stage">
+                        <div class="chart-stage" id="fund-stage">
                             <img id="fund-img"
                                  src={{ url_for('static', filename='css/media/icons/apple.png') }} title="Apple"
                                  border="0">
@@ -107,7 +107,7 @@
             <div class="flex-vertical col-sm-5">
 
                 <!-- Grade Level -->
-                <div class="col-sm-12">
+                <div class="col-sm-12 pie-div">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Grade Level
@@ -123,7 +123,7 @@
                 <!-- Grade Level -->
 
                 <!-- Poverty -->
-                <div class="col-sm-12">
+                <div class="col-sm-12 pie-div">
                     <div class="chart-wrapper" data-step="5" data-intro="And see exactly who they are going towards."
                          style="font-weight:normal" data-position="right">
                         <div class="chart-title">
@@ -140,7 +140,7 @@
                 <!-- Poverty -->
 
                 <!-- School Metro -->
-                <div class="col-sm-12">
+                <div class="col-sm-12 pie-div">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             School Area
@@ -162,7 +162,7 @@
             <div class="flex-vertical col-sm-7">
 
                 <!-- Primary Focus Subject -->
-                <div class="col-sm-12">
+                <div class="col-sm-12 primary-focus-subject-div">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Primary Focus Subject
@@ -177,7 +177,7 @@
                 <div class="row">
 
                     <!-- Resources -->
-                    <div class="col-sm-6 resource-type">
+                    <div class="col-sm-6 chart-div">
                         <div class="chart-wrapper slim">
                             <div class="chart-title">
                                 Resource Type
@@ -190,7 +190,7 @@
                     <!-- Resources -->
 
                     <!-- Primary Focus Area -->
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 chart-div">
                         <div class="chart-wrapper slim" data-step="4"
                              data-intro="See exactly what these donation projects are helping out with."
                              style="font-weight:normal" data-position="top">
