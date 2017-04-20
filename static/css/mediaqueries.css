@@ -1,14 +1,7 @@
 /* Index
-  1. Display Layout
-  2. Navigation Bar
-  3. Body
-      3.1 Chart Wrappers
-      3.2 Donation State Select Menu
-      3.3 Number Displays
-      3.4 Pie Charts
-      3.5 Row Charts
-      3.5 Tooltips
-  4. Footer */
+    1. Navigation Bar Media Queries
+    2. Body Media Queries
+    3. Footer Media Queries */
 
 /* 1. NAVIGATION BAR MEDIA QUERIES */
 
@@ -37,73 +30,81 @@
         margin-top: 100px;
     }
 }
+
 /* NAVIGATION BAR MEDIA QUERIES */
 
-/* 2. TIME CHART MEDIA QUERIES */
+/* 2. BODY MEDIA QUERIES */
 
 @media (max-width: 1280px) {
-    #time-chart svg {
-        width: 100%;
-    }
-}
 
-/* TIME CHART MEDIA QUERIES */
-/* UP TO 673ppx */
-
-@media (max-width:690px) {
-    .chart-div {
-        display: block;
-        width: 95vw;
-        margin-left: auto;
-        margin-right: auto;
-        float:right;
-    }
-    .slim {
-        float: none;
-    }
-}
-
-/* UP TO 765px */
-
-@media (max-width: 765px) {
-    #usa-img {
-        display:none;
-    }
-    .select-stage {
-        text-align:center;
-    }
-    .dc-select-menu {
-        width: 100%;
-    }
-    svg {
-        margin:auto;
-        width:100%;
-    }
+    /* Remove elements on smaller devices */
     .time-chart-div {
         display: none;
     }
+
     .primary-focus-subject-div {
         display: none;
     }
+
+    #usa-img {
+        display: none;
+    }
+
+    img#fund-img {
+        display: none;
+    }
+
+    img#pie-img {
+        display: none;
+    }
+
+    /* Element style changes on smaller devices */
+    svg {
+        margin: auto;
+        width: 100%;
+    }
+
+    .select-stage {
+        text-align: center;
+    }
+
+    .dc-select-menu {
+        width: 100%;
+    }
+
     .pie-div {
         display: block;
         width: 95vw;
         margin: auto;
     }
-    img#fund-img {
-        display:none;
-    }
-    img#pie-img {
-        display: none;
-    }
+
     .chart-div {
-        display:block;
-        float: left;
+        display: block;
+        width: 95vw;
+        margin: auto;
+    }
+
+    .slim {
+        float: none;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+    .chart-div {
+        display: none;
     }
 }
 
-@media (max-width:985px) {
+/* BODY MEDIA QUERIES */
+
+/* 3. FOOTER MEDIA QUERIES */
+
+@media (max-width: 985px) {
     .footer {
         height: 200px;
     }
 }
+
+/* FOOTER MEDIA QUERIES */
