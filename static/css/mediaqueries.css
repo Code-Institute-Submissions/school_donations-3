@@ -3,6 +3,8 @@
     2. Body Media Queries
     3. Footer Media Queries */
 
+
+
 /* 1. NAVIGATION BAR MEDIA QUERIES */
 
 @media (max-width: 330px) {
@@ -94,8 +96,10 @@
 
     .dc-select-menu {
         width: 15vw;
-        margin-bottom:40px;
+        margin-bottom: 40px;
     }
+
+    /* Remove chart divs as they will not align at this size */
     .chart-div {
         display: none;
     }
