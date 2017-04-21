@@ -70,7 +70,9 @@ I used a variety of methods to ensure the responsiveness of my website. These in
         ![Collapsed Navbar](/screenshots/Project2-bootstrap-collapsenav.png?raw=true "Collapsed Navbar")
 
 - **Flexbox**
-    - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness.
+    - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness. Flexbox can come in very handy when you need to devise seemingly straight-forward designs (which easily become tricky using more traditional methods) with just a few lines of code:
+        **Three divs vertically displayed in a single row**
+        ![Vertical Flex Display](/screenshots/Project2-flexbox-verticaldisplay.png?raw=true "Vertical Flex Display")
 
 - **Media Queries**
     - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my website based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize.
@@ -80,7 +82,9 @@ I used a variety of methods to ensure the responsiveness of my website. These in
 I used a variety of methods to test the responsiveness of my website. These included:
 
 - [Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
-    - An essential tool to any developer looking to test the responsiveness of their website, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes.
+    - An essential tool to any developer looking to test the responsiveness of their website, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes and devices.
+        **Firefox Responsive Design Mode simulating an Apple iPhone 5s**
+        ![Firefox RDM](/screenshots/Project2-firefox-RDM.png?raw=true "FirefoxRDM")
 
 - **Testing In Different Environments**
     - There is no simulator that could replace simply testing your website in as many environments as possible. Using as many different browsers and devices as I could get my hands on was key to weening out design flaws. **Testing in Different Enviornments** is a integral part of garanteeing your website functions correctly for every User.
