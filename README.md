@@ -64,7 +64,7 @@ I used a variety of methods to ensure the responsiveness of my website. These in
 
 - [**Bootstrap**](http://getbootstrap.com/)
     - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars:
-     [!Uncollapsed Navbar](/static/css/media/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
+     ![Uncollapsed Navbar](/static/css/media/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
 
 - **Flexbox**
     - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness.
