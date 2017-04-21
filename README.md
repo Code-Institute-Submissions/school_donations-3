@@ -63,8 +63,11 @@ I used a variety of methods to ensure the responsiveness of my website. These in
     - **Mobile First Design** is a fundamental part of designing for a multi screen world. I build this website with mobile space, functionality and utility as first priority.
 
 - [**Bootstrap**](http://getbootstrap.com/)
-    - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars:
-     ![Uncollapsed Navbar](/static/css/media/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
+    - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars and responsive columns:
+        **Uncollapsed navabr and columns in single row**
+        ![Uncollapsed Navbar](/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
+        **Collapsed navbar and columns seperated into multiple rows**
+        ![Collapsed Navbar](/screenshots/Project2-bootstrap-collapsenav.png?raw=true "Collapsed Navbar")
 
 - **Flexbox**
     - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness.
