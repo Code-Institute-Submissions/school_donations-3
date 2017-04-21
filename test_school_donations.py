@@ -2,9 +2,11 @@ import pymongo
 import unittest
 
 
-# Set up local Mongo connection
-# See Readme for more details
 def mongo_connect():
+    """
+    Set up local connection to Mongo DB.
+    See README for instructions.
+    """
     try:
         conn = pymongo.MongoClient()
         return conn
@@ -18,15 +20,17 @@ class TestMongoConnection(unittest.TestCase):
         """
         Test that a local connection to our Mongo DB can be made
         """
-        connection = "MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True)"
-        self.assertEqual(str(mongo_connect()), connection)
+        connection = mongo_connect()
+        address, port = connection.address
+        self.assertEqual(address, 'localhost')
+        self.assertEqual(port, 27017)
 
     def test_mongo_find(self):
         """
         Test that data can be returned from our local Mongo DB
         """
-        conn = mongo_connect()
-        db = conn['donorsUSA']['projects']
+        connection = mongo_connect()
+        db = connection['donorsUSA']['projects']
         projects = db.find_one()['grade_level']
         self.assertEqual(projects, 'Grades 6-8')
 
