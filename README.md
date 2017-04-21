@@ -64,14 +64,14 @@ I used a variety of methods to ensure the responsiveness of my website. These in
 
 - [**Bootstrap**](http://getbootstrap.com/)
     - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars and responsive columns:
-        **Uncollapsed navabr and columns in single row**
+        </br>**__Uncollapsed navabr and columns in single row__**</br>
         ![Uncollapsed Navbar](/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
-        **Collapsed navbar and columns seperated into multiple rows**
+        </br>**__Collapsed navbar and columns seperated into multiple rows__**</br>
         ![Collapsed Navbar](/screenshots/Project2-bootstrap-collapsenav.png?raw=true "Collapsed Navbar")
 
 - **Flexbox**
     - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness. Flexbox can come in very handy when you need to devise seemingly straight-forward designs (which easily become tricky using more traditional methods) with just a few lines of code:
-        **Three divs vertically displayed in a single row**
+        </br>**__Three divs vertically displayed in a single row__**</br>
         ![Vertical Flex Display](/screenshots/Project2-flexbox-verticaldisplay.png?raw=true "Vertical Flex Display")
 
 - **Media Queries**
@@ -83,7 +83,7 @@ I used a variety of methods to test the responsiveness of my website. These incl
 
 - [Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
     - An essential tool to any developer looking to test the responsiveness of their website, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes and devices.
-        **Firefox Responsive Design Mode simulating an Apple iPhone 5s**
+        </br>**__Firefox Responsive Design Mode simulating an Apple iPhone 5s__**</br>
         ![Firefox RDM](/screenshots/Project2-firefox-RDM.png?raw=true "FirefoxRDM")
 
 - **Testing In Different Environments**
