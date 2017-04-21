@@ -92,8 +92,24 @@
 
 @media (min-width: 768px) and (max-width: 1280px) {
 
+    .dc-select-menu {
+        width: 15vw;
+        margin-bottom:40px;
+    }
     .chart-div {
         display: none;
+    }
+
+    /* Remove intro button as tour can not be completed at this size */
+    .intro-button {
+        display:none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 876px) {
+
+    .dc-select-menu {
+        margin-left: -50px;
     }
 }
 
@@ -104,6 +120,12 @@
 @media (max-width: 985px) {
     .footer {
         height: 200px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .footer {
+        height: 150px;
     }
 }
 

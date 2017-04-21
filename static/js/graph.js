@@ -176,14 +176,14 @@ function makeGraphs(error, projectsJson) {
         .xAxis().ticks(8);
 
     resourceTypeRowChart
-        .width(300)
+        .width(320)
         .height(200)
         .dimension(resourceTypeDim)
         .group(numProjectsByResourceType)
         .xAxis().ticks(4);
 
     primaryFocusAreaRowChart
-        .width(300)
+        .width(320)
         .height(200)
         .dimension(primaryFocusAreaDim)
         .group(numProjectsByPrimaryFocusArea)
