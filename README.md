@@ -4,9 +4,9 @@
 
 ### What is this dashboard for?
 
-The goal of this project was to expand my skill set and tools for creating a meaningful interactive data visualization.
+The goal of this project was to expand my skill set and tools for creating a meaningful, interactive data visualization.
 To do this I used a data set from DonorsChoose.org to build a data visualization that represents school donations
-broken down by different attributes over a time line.
+broken down by different attributes over a time-line.
 
 ### What does it do?
 
@@ -15,11 +15,11 @@ It also includes a Dashboard tutorial which provides a step-by-step walk through
 
 ### How does it work?
 
-This projects uses Python Flask for building a server that interacts with Mongo DB and renders the html page that
+This projects uses the Python Flask Framework for building a server that interacts with Mongo DB and renders the HTML page that
 contains charts. Using 3rd party CSS and JavaScript (__see **Tech Used**__), I created **graph.js** which contains the
-logic and data binding for dashboard elements. I inject data from my python class into this file. The data will then be
+logic and data binding for dashboard elements. I inject data from my Python class into this file. The data will then be
 filtered using crossfilter.js before being bound to the charts using a combinations of D3.js and DC.js. I also use
-Queue.js, in case I need to read from additional datasources/apis's at a later date.
+Queue.js, in case I need to read from additional data sources/APIs at a later date.
 
 ## Features
 
@@ -28,11 +28,12 @@ Queue.js, in case I need to read from additional datasources/apis's at a later d
 1. Responsive data visualizations with two way data binding.
 2. Visually effective presentation layer.
 3. User step-by-step walk-through tour.
+4. Fully responsive layout with mobile design.
+5. Unit tests.
 
 ### Features Left to Implement
 
-1. Fully responsive layout with mobile design.
-2. Integration tests.
+- An 'About' page explaining Donors Choose in more detail.
 
 ## Tech Used
 
@@ -55,6 +56,31 @@ Queue.js, in case I need to read from additional datasources/apis's at a later d
 - [Bootstrap](http://getbootstrap.com/)
     - **Bootstrap** is the most popular framework for developing responsive layouts.
 
+## Responsive Web Design
+
+I used a variety of methods to ensure the responsiveness of my website. These included:
+- **Mobile First Design**
+    - **Mobile First Design** is a fundamental part of designing for a multi screen world. I build this website with mobile space, functionality and utility as first priority.
+
+- [**Bootstrap**](http://getbootstrap.com/)
+    - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars:
+     [!Uncollapsed Navbar](/static/css/media/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
+
+- **Flexbox**
+    - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness.
+
+- **Media Queries**
+    - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my website based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize.
+
+### Responsive Web Design Testing
+
+I used a variety of methods to test the responsiveness of my website. These included:
+
+- [Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
+    - An essential tool to any developer looking to test the responsiveness of their website, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes.
+
+- **Testing In Different Environments**
+    - There is no simulator that could replace simply testing your website in as many environments as possible. Using as many different browsers and devices as I could get my hands on was key to weening out design flaws. **Testing in Different Enviornments** is a integral part of garanteeing your website functions correctly for every User.
 
 ## Contributing
 
@@ -78,4 +104,7 @@ Within the **donor_projects()** function enter the following values: ```connecti
 8. Run **school_donations.py** in your IDE and - __volia!__ - the app should appear in your browser.
     - Give the app a few minutes for the data to load.
     - Make sure you have **mongod** running; otherwise you'll get no data back.
-    - Turn off caching in your chrome developer tools. This prevents confusion and frustration of seeing out of date cached versions of your dashboard when developing.
+    - Turn off caching in your chrome developer tools. This prevents the confusion and frustration of seeing out of date cached versions of your dashboard when developing.
+
+### Unit Test
+Within the project I have included a Test Suite to verify the local database connection. **Ensure mongod is running before running these tests** or they will fail automatically.
