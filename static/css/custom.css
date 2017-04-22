@@ -10,7 +10,6 @@
       3.5 Tooltips
   4. Footer */
 
-
 /* 1. DISPLAY LAYOUT */
 
 .flex-outer {
@@ -74,6 +73,7 @@
     margin-left: 10px;
     margin-right: 20px;
 }
+
 /* DISPLAY LAYOUT */
 
 /* 3. BODY */
@@ -97,6 +97,7 @@ svg {
     color: #ffffff;
     font-size: 20px;
 }
+
 /* CHART WRAPPERS */
 
 /* 3.2 DONATION STATE SELECT MENU */
@@ -126,6 +127,7 @@ div#menu-select.dc-chart {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 /* DONATION STATE SELECT MENU */
 
 /* 3.3 NUMBER DISPLAYS */
@@ -133,11 +135,6 @@ div#menu-select.dc-chart {
 div.dc-chart {
     float: none;
 }
-
-/* previous id="no-border", when converted into class failed to work. Temporary fix with inline styling */
-/*#outer.chart-wrapper.chart-title.no-border {*/
-    /*border: none !important;*/
-/*}*/
 
 .num-display {
     background: #33CC99;
@@ -149,6 +146,7 @@ div.dc-chart {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+
 /* NUMBER DISPLAYS */
 
 /* 3.4 PIE CHARTS */
@@ -170,7 +168,6 @@ img#fund-img {
     right: 340px;
 }
 
-
 /* PIE CHARTS */
 
 /* 3.5 ROW CHARTS */
@@ -188,6 +185,7 @@ img#fund-img {
     position: relative;
     left: 20px;
 }
+
 /* PIE CHARTS */
 
 /* 3.5 TOOLTIPS */
@@ -195,6 +193,7 @@ img#fund-img {
 div.introjs-helperLayer {
     background-color: rgba(255, 255, 255, .4) !important;
 }
+
 /* TOOLTIPS */
 
 /* 4. FOOTER */
@@ -234,4 +233,5 @@ div.introjs-helperLayer {
     text-decoration: none;
     color: #62B2B5;
 }
+
 /* FOOTER */

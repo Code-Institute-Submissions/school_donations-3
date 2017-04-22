@@ -3,8 +3,6 @@
     2. Body Media Queries
     3. Footer Media Queries */
 
-
-
 /* 1. NAVIGATION BAR MEDIA QUERIES */
 
 @media (max-width: 330px) {
@@ -13,7 +11,7 @@
     }
 
     #outer {
-        margin-top: 100px;
+        margin-top: 70px;
     }
 }
 
@@ -21,15 +19,11 @@
     .navbar-inverse .navbar-brand {
         font-size: 5vw;
     }
-
-    #outer {
-        margin-top: 100px;
-    }
 }
 
-@media (min-width: 551px) and (max-width: 770px) {
+@media (min-width: 331px) and (max-width: 770px) {
     #outer {
-        margin-top: 100px;
+        margin-top: 80px;
     }
 }
 
@@ -106,7 +100,7 @@
 
     /* Remove intro button as tour can not be completed at this size */
     .intro-button {
-        display:none;
+        display: none;
     }
 }
 
