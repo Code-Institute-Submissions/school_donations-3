@@ -1,3 +1,12 @@
+/*Color Palette
+
+#ffffff - White
+#62B2B5 - Fountain Blue
+#eff7f3 - Light Smog Blue
+#62b58f - Pastel Green
+#33CC99 - Shamrock
+#4e8e90 - Cyan Blue */
+
 /* Index
   1. Display Layout
   2. Navigation Bar
@@ -210,7 +219,6 @@ div.introjs-helperLayer {
 
 .footer #megan {
     margin-top: 40px;
-    /*text-align: right;*/
     text-align: center;
     font-size: 16px;
     color: #4e8e90;
