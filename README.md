@@ -31,10 +31,6 @@ Queue.js, in case I need to read from additional data sources/APIs at a later da
 4. Fully responsive layout with mobile design.
 5. Unit tests.
 
-### Features Left to Implement
-
-- An 'About' page explaining Donors Choose in more detail.
-
 ## Tech Used
 
 ### Some Tech Used Includes
@@ -58,36 +54,36 @@ Queue.js, in case I need to read from additional data sources/APIs at a later da
 
 ## Responsive Web Design
 
-I used a variety of methods to ensure the responsiveness of my website. These included:
+I used a variety of methods to ensure the responsiveness of my dashboard. These included:
 - **Mobile First Design**
-    - **Mobile First Design** is a fundamental part of designing for a multi screen world. I build this website with mobile space, functionality and utility as first priority.
+    - **Mobile First Design** is a fundamental part of designing for a multi screen world. I build this dashboard with mobile space, functionality and utility as first priority.
 
 - [**Bootstrap**](http://getbootstrap.com/)
-    - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement stylish collapsible navbars and responsive columns:
+    - I used the **Bootstrap** Framework to create tried and trusted sleek, responsive elements. For example, Bootstrap makes it simple to implement a stylish collapsible navbar and responsive columns:
         </br></br>**_Uncollapsed navabr and columns in single row_**</br>
         ![Uncollapsed Navbar](/screenshots/Project2-bootstrap-fullnav.png?raw=true "Uncollapsed Navbar")
         </br></br>**_Collapsed navbar and columns seperated into multiple rows_**</br>
         ![Collapsed Navbar](/screenshots/Project2-bootstrap-collapsenav.png?raw=true "Collapsed Navbar")
 
 - **Flexbox**
-    - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness. Flexbox can come in very handy when you need to devise seemingly straight-forward designs (which easily become tricky using more traditional methods) with just a few lines of code:
+    - I used **Flexbox** display for simple yet powerful design layouts that ensure responsiveness. **Flexbox** can come in very handy when you need to devise seemingly straight-forward designs (which easily become tricky using more traditional methods) with just a few lines of code:
         </br></br>**_Three divs vertically displayed in a single row_**</br>
         ![Vertical Flex Display](/screenshots/Project2-flexbox-verticaldisplay.png?raw=true "Vertical Flex Display")
 
 - **Media Queries**
-    - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my website based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize.
+    - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my dashboard based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize.
 
 ### Responsive Web Design Testing
 
-I used a variety of methods to test the responsiveness of my website. These included:
+I used a variety of methods to test the responsiveness of my dashboard. These included:
 
 - [Firefox Responsive Design Mode](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode)
-    - An essential tool to any developer looking to test the responsiveness of their website, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes and devices.
+    - This was an essential tool to testing the responsiveness of my dashboard, **Firefox Responsive Design Mode** makes it fast and effortless to switch between screen sizes and devices.
         </br></br>**_Firefox Responsive Design Mode simulating an Apple iPhone 5s_**</br>
         ![Firefox RDM](/screenshots/Project2-firefox-RDM.png?raw=true "FirefoxRDM")
 
 - **Testing In Different Environments**
-    - There is no simulator that could replace simply testing your website in as many environments as possible. Using as many different browsers and devices as I could get my hands on was key to weening out design flaws. **Testing in Different Enviornments** is a integral part of garanteeing your website functions correctly for every User.
+    - There is no simulator that could replace simply testing my dashboard in as many environments as possible. Using as many different browsers and devices as I could get my hands on was key to weening out design flaws. **Testing in Different Environments** was a integral part of guaranteeing my dashboard functions correctly for every User.
 
 ## Contributing
 
