@@ -16,35 +16,35 @@ function makeGraphs(error, projectsJson) {
     });
 
 
-    // Create a Crossfilter instance
-    var ndx = crossfilter(donorsUSProjects);
+    // Create a Crossfilter instance based on the dataset
+    var donor_crossfilter = crossfilter(donorsUSProjects);
 
     // Define Dimensions
-    var dateDim = ndx.dimension(function (d) {
+    var dateDim = donor_crossfilter.dimension(function (d) {
         return d["date_posted"];
     });
-    var resourceTypeDim = ndx.dimension(function (d) {
+    var resourceTypeDim = donor_crossfilter.dimension(function (d) {
         return d["resource_type"];
     });
-    var povertyLevelDim = ndx.dimension(function (d) {
+    var povertyLevelDim = donor_crossfilter.dimension(function (d) {
         return d["poverty_level"];
     });
-    var stateDim = ndx.dimension(function (d) {
+    var stateDim = donor_crossfilter.dimension(function (d) {
         return d["school_state"];
     });
-    var fundingStatus = ndx.dimension(function (d) {
+    var fundingStatus = donor_crossfilter.dimension(function (d) {
         return d["funding_status"];
     });
-    var primaryFocusSubjectDim = ndx.dimension(function (d) {
+    var primaryFocusSubjectDim = donor_crossfilter.dimension(function (d) {
         return d["primary_focus_subject"];
     });
-    var gradeLevelDim = ndx.dimension(function (d) {
+    var gradeLevelDim = donor_crossfilter.dimension(function (d) {
         return d["grade_level"];
     });
-    var schoolMetroDim = ndx.dimension(function (d) {
+    var schoolMetroDim = donor_crossfilter.dimension(function (d) {
         return d["school_metro"];
     });
-    var primaryFocusAreaDim = ndx.dimension(function (d) {
+    var primaryFocusAreaDim = donor_crossfilter.dimension(function (d) {
         return d["primary_focus_area"];
     });
 
@@ -58,21 +58,22 @@ function makeGraphs(error, projectsJson) {
         return d["total_donations"];
     });
     var stateGroup = stateDim.group();
-    var totalSchoolDistrict = ndx.groupAll().reduceSum(function (d) {  // returns length of school_district array
+    var totalSchoolDistrict = donor_crossfilter.groupAll().reduceSum(function (d) {  // returns length of school_district array
         return d["school_district"].length;
     });
     var numProjectsByPrimaryFocusSubject = primaryFocusSubjectDim.group();
     var numProjectsByGradeLevel = gradeLevelDim.group();
     var numProjectsBySchoolMetro = schoolMetroDim.group();
     var numProjectsByPrimaryFocusArea = primaryFocusAreaDim.group();
-    var totalProjects = ndx.groupAll();
-    var totalDonations = ndx.groupAll().reduceSum(function (d) {
+    var totalProjects = donor_crossfilter.groupAll();
+    var totalDonations = donor_crossfilter.groupAll().reduceSum(function (d) {
         return d["total_donations"];
     });
     var max_state = totalDonationsByState.top(1)[0].value;
 
 
-    // Define values to be used in charts
+    // Define values to determine the first and last dates
+    // used to create the Time Chart
     var minDate = dateDim.bottom(1)[0]["date_posted"];
     var maxDate = dateDim.top(1)[0]["date_posted"];
 
@@ -189,6 +190,6 @@ function makeGraphs(error, projectsJson) {
         .group(numProjectsByPrimaryFocusArea)
         .xAxis().ticks(4);
 
-    // Render charts
+    // Render charts last, otherwise the charts will attempt to render with incomplete data
     dc.renderAll();
 }
