@@ -71,7 +71,11 @@ I used a variety of methods to ensure the responsiveness of my dashboard. These 
         ![Vertical Flex Display](/screenshots/Project2-flexbox-verticaldisplay.png?raw=true "Vertical Flex Display")
 
 - **Media Queries**
-    - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my dashboard based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize.
+    - I spent a lot of time writing and re-writing **Media Queries** to optimize the responsiveness of my dashboard based on screen size. It can be a meticulous and tiring process, but is more than worth it to have that perfect resize. Margins, heights, font sizes and display properties were all troublesome upon resize and required **Media Queries** to ensure the dashboard maintained its flow at all sizes. There were certain graphs that just would not fit comfortably on a smaller screen, so I simplified the layout by removing such elements with **Media Queries**:
+        </br></br>**_Number of Donations Time Chart and Primary Focus Row Chart Visible From 1280px Screen Width and Higher_**</br>
+        ![Large Charts](/screenshots/Project2-mediaqueries-1280px.png?raw=true "Large Charts")
+        </br></br>**_Number of Donations Time Chart and Primary Focus Row Chart Removed Upon Resize_**</br>
+        ![Large Charts Removed](/screenshots/Project2-mediaqueries-small.png?raw=true "Large Charts Removed")
 
 ### Responsive Web Design Testing
 
