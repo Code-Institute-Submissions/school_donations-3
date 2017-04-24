@@ -22,17 +22,17 @@ class TestMongoConnection(unittest.TestCase):
         """
         connection = mongo_connect()
         address, port = connection.address
-        self.assertEqual(address, 'localhost')
-        self.assertEqual(port, 27017)
+        self.assertEqual(address, 'localhost', "Connection address is not localhost")
+        self.assertEqual(port, 27017, "Connection post is not 27017")
 
     def test_mongo_find(self):
         """
-        Test that data can be returned from our local Mongo DB
+        Test that data is being returned from our local Mongo DB
         """
         connection = mongo_connect()
         db = connection['donorsUSA']['projects']
-        projects = db.find_one()['grade_level']
-        self.assertEqual(projects, 'Grades 6-8')
+        projects = db.find().count()
+        self.assertGreater(projects, 1000, "Insufficient data is being returned")
 
 
 if __name__ == '__main__':
