@@ -19,34 +19,31 @@ function makeGraphs(error, projectsJson) {
     // Create a Crossfilter instance based on the dataset
     var donor_crossfilter = crossfilter(donorsUSProjects);
 
+    // Dimension creation helper function
+    function get_donor_dim(attribute_name) {
+        return donor_crossfilter.dimension(function(d) {
+            return d[attribute_name];
+        });
+    }
+
     // Define Dimensions
-    var dateDim = donor_crossfilter.dimension(function (d) {
-        return d["date_posted"];
-    });
-    var resourceTypeDim = donor_crossfilter.dimension(function (d) {
-        return d["resource_type"];
-    });
-    var povertyLevelDim = donor_crossfilter.dimension(function (d) {
-        return d["poverty_level"];
-    });
-    var stateDim = donor_crossfilter.dimension(function (d) {
-        return d["school_state"];
-    });
-    var fundingStatus = donor_crossfilter.dimension(function (d) {
-        return d["funding_status"];
-    });
-    var primaryFocusSubjectDim = donor_crossfilter.dimension(function (d) {
-        return d["primary_focus_subject"];
-    });
-    var gradeLevelDim = donor_crossfilter.dimension(function (d) {
-        return d["grade_level"];
-    });
-    var schoolMetroDim = donor_crossfilter.dimension(function (d) {
-        return d["school_metro"];
-    });
-    var primaryFocusAreaDim = donor_crossfilter.dimension(function (d) {
-        return d["primary_focus_area"];
-    });
+    var dateDim = get_donor_dim("date_posted");
+
+    var resourceTypeDim = get_donor_dim("resource_type");
+
+    var povertyLevelDim = get_donor_dim("poverty_level");
+
+    var stateDim = get_donor_dim("school_state");
+
+    var fundingStatus = get_donor_dim("funding_status");
+
+    var primaryFocusSubjectDim = get_donor_dim("primary_focus_subject");
+
+    var gradeLevelDim = get_donor_dim("grade_level");
+
+    var schoolMetroDim = get_donor_dim("school_metro");
+
+    var primaryFocusAreaDim = get_donor_dim("primary_focus_area");
 
 
     // Calculate metrics for grouping and counting data
@@ -96,27 +93,24 @@ function makeGraphs(error, projectsJson) {
         .dimension(stateDim)
         .group(stateGroup);
 
+    // valueAccessor helper function
+    function identity(d){ return d; }
+
     totalSchoolDistrictND
         .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
-            return d;
-        })
+        .valueAccessor(identity)
         .group(totalSchoolDistrict)
         .formatNumber(d3.format(".3s"));
 
     numberProjectsND
         .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
-            return d;
-        })
+        .valueAccessor(identity)
         .group(totalProjects)
         .formatNumber(d3.format(".3s"));
 
     totalDonationsND
         .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
-            return d;
-        })
+        .valueAccessor(identity)
         .group(totalDonations)
         .formatNumber(d3.format(".3s"));
 
