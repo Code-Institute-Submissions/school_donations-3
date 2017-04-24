@@ -1,99 +1,215 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>School Donations Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/keen-dashboards.css') }}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css') }}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css') }}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/mediaqueries.css') }}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Oswald|Roboto|Slabo+27px" rel="stylesheet">
+{% extends "base.html" %}
+{% block index %}
 
-</head>
+    <div id="outer" class="container-fluid">
 
-<body class="application">
+        <div data-step="2" data-intro="Explore the statistics of DonorsChoose.org,
+	    a US based nonprofit organisation that allows individuals to donate money directly to public school
+	    classroom projects." style="font-weight: normal" data-position="bottom">
+            <div class="row">
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
+                <!-- Menu Select -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper" data-step="3" data-intro="Select a State to get specific information on how DonorsChoose is
+		            benefiting your local classrooms." style="font-weight:normal" data-position="bottom">
+                        <div class="chart-title">
+                            Donation State
+                        </div>
+                        <div class="chart-stage select-stage">
+                            <img id="usa-img"
+                                 src={{ url_for('static', filename='css/media/icons/united-states-of-america.png') }} title="USA"
+                                 border="0">
+                            <div id="menu-select"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Select -->
 
-        <div class="navbar-header col-sm-10">
-            <a class="navbar-brand" href="./">
-                <img src={{ url_for('static', filename='css/media/icons/mortarboard.png') }} title="MortarBoard"
-                     border="0">
-                School Donations Dashboard
-            </a>
+                <!-- Metric 3 -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" style="border:none">
+                            Total Number of School Districts
+                        </div>
+                        <div class="chart-stage num-display">
+                            <div id="total-school-district-nd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Metric 3 -->
+
+                <!-- Metric 1 -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper" data-step="1" data-intro="Welcome to the School Donations Dashboard!"
+                         style="font-weight: bold" data-position="bottom">
+                        <div class="chart-title" style="border:none">
+                            Total Number of Donations
+                        </div>
+                        <div class="chart-stage num-display">
+                            <div id="number-projects-nd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Metric 1 -->
+
+                <!-- Metric 2 -->
+                <div class="col-sm-3">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" style="border:none">
+                            Total Donations in USD
+                        </div>
+                        <div class="chart-stage num-display">
+                            <div id="total-donations-nd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Metric 2 -->
+
+            </div>
+
+            <div class="row">
+
+                <!-- Time Chart -->
+                <div class="col-sm-8 time-chart-div">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Number of Donations
+                        </div>
+                        <div class="chart-stage">
+                            <div id="time-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Time Chart -->
+
+                <!-- funding Pie -->
+                <div class="col-sm-4 pie-div">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Funding Status
+                        </div>
+                        <div class="chart-stage" id="fund-stage">
+                            <img id="fund-img"
+                                 src={{ url_for('static', filename='css/media/icons/apple.png') }} title="Apple"
+                                 border="0">
+                            <div id="funding-pie-chart" class="pie-style"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- funding Pie -->
+
+            </div>
         </div>
 
-        <div class="start-button col-sm-2">
-            <ul class="nav navbar-nav">
-                <li>
-                    <button class="intro-button" type="button" autofocus onclick="javascript:introJs().start();">Start
-                        Tour
-                    </button>
-                </li>
-            </ul>
+        <div class="flex-outer row">
+
+            <!-- Flexbox Container for Vertical Display -->
+            <div class="flex-vertical col-sm-5">
+
+                <!-- Grade Level -->
+                <div class="col-sm-12 pie-div">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Grade Level
+                        </div>
+                        <div class="chart-stage">
+                            <img id="pie-img"
+                                 src={{ url_for('static', filename='css/media/icons/light-bulb.png') }} title="Light-bulb"
+                                 border="0">
+                            <div id="grade-level-pie-chart" class="pie-style"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grade Level -->
+
+                <!-- Poverty -->
+                <div class="col-sm-12 pie-div">
+                    <div class="chart-wrapper" data-step="5" data-intro="And see exactly who they are going towards."
+                         style="font-weight:normal" data-position="bottom">
+                        <div class="chart-title">
+                            Poverty Level
+                        </div>
+                        <div class="chart-stage">
+                            <img id="pie-img"
+                                 src={{ url_for('static', filename='css/media/icons/notebook.png') }} title="Notebook"
+                                 border="0">
+                            <div id="poverty-level-pie-chart" class="pie-style"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Poverty -->
+
+                <!-- School Metro -->
+                <div class="col-sm-12 pie-div">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            School Area
+                        </div>
+                        <div class="chart-stage">
+                            <img id="pie-img"
+                                 src={{ url_for('static', filename='css/media/icons/college.png') }} title="College"
+                                 border="0">
+                            <div id="school-metro-pie-chart" class="pie-style"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- School Metro -->
+
+
+            </div>
+            <!-- Flexbox Container for Vertical Display -->
+
+            <div class="flex-vertical col-sm-7">
+
+                <!-- Primary Focus Subject -->
+                <div class="col-sm-12 primary-focus-subject-div">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Primary Focus Subject
+                        </div>
+                        <div class="chart-stage">
+                            <div id="primary-focus-subject-row-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Primary Focus Subject -->
+
+                <div class="row">
+
+                    <!-- Resources -->
+                    <div class="col-sm-6 chart-div">
+                        <div class="chart-wrapper slim">
+                            <div class="chart-title">
+                                Resource Type
+                            </div>
+                            <div class="chart-stage">
+                                <div id="resource-type-row-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resources -->
+
+                    <!-- Primary Focus Area -->
+                    <div class="col-sm-6 chart-div">
+                        <div class="chart-wrapper slim" data-step="4"
+                             data-intro="See exactly what these donation projects are helping out with."
+                             style="font-weight:normal" data-position="top">
+                            <div class="chart-title">
+                                Primary Focus Area
+                            </div>
+                            <div class="chart-stage">
+                                <div id="primary-focus-area-row-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Primary Focus Area -->
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-</div>
-
-<!-- Insert base.html -->
-
-{% block base %}
 
 {% endblock %}
-
-<!-- Insert base.html -->
-
-<hr>
-
-<!-- Footer -->
-<footer>
-    <div class="footer">
-        <div class="container narrow row-fluid">
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4" data-step="6"
-                 data-intro="Visit DonorsChoose.org to check out projects running right now!" style="font-weight:normal"
-                 data-position="top">
-                <h2>Visit DonorsChoose.org</h2>
-                <div class="logos">
-                    <h6><a id="donorschoose-btn" href="https://www.donorschoose.org/donors/search.html">Donate Now</a>
-                    </h6>
-                </div>
-            </div>
-            <div class="col-sm-1"></div>
-            <div id="megan" class="col-sm-3">
-                <h5>Created by Megan Emily Duffy</h5>
-                <div class="logos">
-                    <a href="https://github.com/meganduffy">
-                        <img src={{ url_for('static', filename='css/media/icons/github-logo.png') }} title="Github"
-                             border="0">
-                    </a>
-                    <a href="https://www.linkedin.com/in/meganemilyduffy/">
-                        <img src={{ url_for('static', filename='css/media/icons/linkedin-sign.png') }} title="LinkedIn"
-                             border="0">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer -->
-
-
-<script src="{{ url_for ('static', filename='lib/js/intro.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/jquery.min.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/crossfilter.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/d3.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/dc.js') }}"></script>
-<script src="{{ url_for ('static', filename='lib/js/queue.js') }}"></script>
-
-<script src="{{ url_for ('static', filename='lib/js/keen.min.js') }}"></script>
-<script src="{{ url_for ('static', filename='js/graph.js') }}"></script>
-</body>
-</html>
-

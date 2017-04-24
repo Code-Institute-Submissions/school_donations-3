@@ -33,28 +33,12 @@
 
 @media (max-width: 1280px) {
 
-    /* Remove elements on smaller devices */
-    .time-chart-div {
+    /* Remove elements that will not align on smaller devices */
+    .time-chart-div, .primary-focus-subject-div, #usa-img,
+    img#fund-img, img#pie-img {
         display: none;
     }
 
-    .primary-focus-subject-div {
-        display: none;
-    }
-
-    #usa-img {
-        display: none;
-    }
-
-    img#fund-img {
-        display: none;
-    }
-
-    img#pie-img {
-        display: none;
-    }
-
-    /* Element style changes on smaller devices */
     svg {
         margin: auto;
         width: 100%;
@@ -68,13 +52,7 @@
         width: 100%;
     }
 
-    .pie-div {
-        display: block;
-        width: 95vw;
-        margin: auto;
-    }
-
-    .chart-div {
+    .pie-div, .chart-div {
         display: block;
         width: 95vw;
         margin: auto;

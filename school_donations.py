@@ -20,10 +20,10 @@ FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, '
           'primary_focus_subject': True, 'grade_level': True}
 
 
-# Set up routing and call base.html file
+# Set up routing and call index.html file
 @app.route("/")
 def index():
-    return render_template("base.html")
+    return render_template("index.html")
 
 
 # Retrieve data from database
