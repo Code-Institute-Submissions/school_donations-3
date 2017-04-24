@@ -52,10 +52,11 @@
         width: 100%;
     }
 
-    .pie-div, .chart-div {
+    .pie-div, .chart-div, .primary-focus {
         display: block;
         width: 95vw;
         margin: auto;
+        right: 0;
     }
 
     .slim {

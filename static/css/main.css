@@ -192,9 +192,9 @@ img#fund-img {
     float: right;
 }
 
-.resource-type {
+.primary-focus {
     position: relative;
-    left: 20px;
+    right: 20px;
 }
 
 /* PIE CHARTS */
