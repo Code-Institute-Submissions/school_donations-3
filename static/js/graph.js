@@ -58,7 +58,8 @@ function makeGraphs(error, projectsJson) {
         return d["total_donations"];
     });
     var stateGroup = stateDim.group();
-    var totalSchoolDistrict = donor_crossfilter.groupAll().reduceSum(function (d) {  // returns length of school_district array
+    // returns length of school_district array
+    var totalSchoolDistrict = donor_crossfilter.groupAll().reduceSum(function (d) {
         return d["school_district"].length;
     });
     var numProjectsByPrimaryFocusSubject = primaryFocusSubjectDim.group();
@@ -72,8 +73,7 @@ function makeGraphs(error, projectsJson) {
     var max_state = totalDonationsByState.top(1)[0].value;
 
 
-    // Define values to determine the first and last dates
-    // used to create the Time Chart
+    // Define values to determine the first and last dates used to create the Time Chart
     var minDate = dateDim.bottom(1)[0]["date_posted"];
     var maxDate = dateDim.top(1)[0]["date_posted"];
 
