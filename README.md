@@ -6,7 +6,7 @@
 
 The goal of this project was to expand my skill set and tools for creating a meaningful, interactive data visualization.
 To do this I used a data set from DonorsChoose.org to build a data visualization that represents school donations
-broken down by different attributes over a time-line.
+broken down by different attributes over a time-line. You can view the dashboard at [**project2-schooldonations.herokuapp.com**](https://project2-schooldonations.herokuapp.com/).
 
 ### What does it do?
 
