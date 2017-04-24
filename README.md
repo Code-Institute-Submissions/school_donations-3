@@ -113,6 +113,6 @@ Within the **donor_projects()** function enter the following values: ```connecti
     - Make sure you have **mongod** running; otherwise you'll get no data back.
     - Turn off caching in your chrome developer tools. This prevents the confusion and frustration of seeing out of date cached versions of your dashboard when developing.
 
-### Integrated Test
+### Integration Tests
 - Within the project I have included a Test Suite to verify the local database connection. **Ensure mongod is running before running these tests** or they will fail automatically as no data will be present.
 - My experience with testing up until now has mainly been with Unit Testing - checking functions and classes execute correctly. Unfortunately, with this project I was not in a position to create many Python functions or classes and thus have been unable to show you the full extent of my testing abilities.
