@@ -231,9 +231,13 @@ div.introjs-helperLayer {
     margin-right: auto;
     width: 80px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: flex-end;
+}
+
+.footer .logos :not(#donorchoose-btn) {
+    flex-flow: row nowrap;
 }
 
 .footer #donorschoose-btn {
@@ -242,6 +246,7 @@ div.introjs-helperLayer {
     background-color: #ffffff;
     text-decoration: none;
     color: #62B2B5;
+    min-width: 100%;
 }
 
 /* FOOTER */
